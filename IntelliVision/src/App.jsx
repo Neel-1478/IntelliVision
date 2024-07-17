@@ -1,35 +1,53 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useState, useCallback } from 'react';
+import { useDropzone } from 'react-dropzone';
+import './App.css';
 
-function App() {
-  const [count, setCount] = useState(0)
+const ImageUpload = ({ title, onImageUpload }) => {
+  const onDrop = useCallback((acceptedFiles) => {
+    const file = acceptedFiles[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        onImageUpload(reader.result);
+      };
+      reader.readAsDataURL(file);
+    }
+  }, [onImageUpload]);
+
+  const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop, accept: 'image/*' });
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <div {...getRootProps()} className={`image-upload-container ${isDragActive ? 'active' : ''}`}>
+      <input {...getInputProps()} />
+      <h3>{title}</h3>
+      {isDragActive ? (
+        <p>Drop the files here ...</p>
+      ) : (
+        <p>Drag 'n' drop an image here, or click to select one</p>
+      )}
+    </div>
+  );
+};
 
-export default App
+const App = () => {
+  const [frontImage, setFrontImage] = useState(null);
+  const [backImage, setBackImage] = useState(null);
+
+  return (
+    <div className='mainContainer'>
+      <div className="app">
+        <div className="container">
+          <ImageUpload title="Front Side" onImageUpload={setFrontImage} />
+          {frontImage && <img src={frontImage} alt="Front" className="uploaded-image" />}
+        </div>
+        <div className="container">
+          <ImageUpload title="Back Side" onImageUpload={setBackImage} />
+          {backImage && <img src={backImage} alt="Back" className="uploaded-image" />}
+        </div>
+      </div>
+      <button className="scan-button">Scan</button>
+    </div>
+  );
+};
+
+export default App;
