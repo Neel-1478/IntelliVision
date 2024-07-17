@@ -34,7 +34,7 @@ const App = () => {
   const [backImage, setBackImage] = useState(null);
 
   return (
-    <div className='mainContainer'>
+    <div className='main-container'>
       <div className="app">
         <div className="container">
           <ImageUpload title="Front Side" onImageUpload={setFrontImage} />
