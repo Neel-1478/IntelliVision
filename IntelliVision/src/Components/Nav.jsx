@@ -10,8 +10,8 @@ const Nav = () => {
       </div>
       <ul className={styles.navLinks}>
         <li className={styles.navItem}><a href="#home">Home</a></li>
-        <li className={styles.navItem}><a href="#shop">Shop</a></li>
-        <li className={styles.navItem}><a href="#collections">Collections</a></li>
+        <li className={styles.navItem}><a href="#shop">Categories</a></li>
+        <li className={styles.navItem}><a href="#collections">Sochenge</a></li>
         <li className={styles.navItem}><a href="#about">About</a></li>
         <li className={styles.navItem}><a href="#contact">Contact</a></li>
       </ul>
