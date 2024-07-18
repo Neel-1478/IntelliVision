@@ -6,7 +6,7 @@ const Nav = () => {
     <nav className={styles.nav}>
       <div className={styles.logo}>
         <img src="public\vite.svg" alt="Logo" />
-        <span>Logo</span>
+        <span>IntelliVision</span>
       </div>
       <ul className={styles.navLinks}>
         <li className={styles.navItem}><a href="#home">Home</a></li>
