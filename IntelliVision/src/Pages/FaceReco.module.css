@@ -1,0 +1,42 @@
+.facecontainer{
+    padding: 2%;
+    margin-left: -2%;
+    width:1800px;
+    height: 650px;
+    border-radius: 10px;
+    background-color: #5a3c6c;
+    display: flex;
+    gap: 12rem;
+    align-items: center;
+   
+  }
+  .transfer{
+ 
+    margin-top:17%;
+  }
+  .transfer img{
+    width:150px;
+    height:150px;
+  }
+  .facereco, .FaceDetection{
+    padding: 2%;
+    margin-left: -2%;
+    width:1450px;
+    height: 550px;
+    border-radius: 10px;
+    background-color: #5a3c6c;
+    display: flex;
+    gap: 12rem;
+    align-items: center;
+  }
+  .facehero img{
+    width:600px;
+    height:600px;
+    border-radius: 50%;
+    object-fit: cover;
+
+  }
+  .facehero{
+    filter: drop-shadow(0 8px 12px #db71fecc);
+    border-radius: 50%;
+  }
