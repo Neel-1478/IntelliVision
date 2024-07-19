@@ -1,4 +1,4 @@
-body {
+.faceSection, .recoSection{
   font-family: Arial, sans-serif;
   background-color: #f5f5f5;
   margin: 0;
@@ -7,8 +7,8 @@ body {
   align-items: center;
   justify-content: center;
   height: 100vh;
-}
 
+}
 .mainContainer {
   display: flex;
   flex-direction: column;
@@ -33,22 +33,21 @@ body {
   background-color: #fff;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 10px;
-  width: 900px; 
+  width: 400px; 
+  height: 420px;
+  border-radius: 10px;
   
 }
 
 .container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+ 
   border: 2px solid #6a1b9a;
   border-radius: 10px;
   padding: 20px;
-  margin: 10px;
-  width: 300px;
+
   height: 400px;
   background-color: #fff;
-  justify-content: space-between;
+
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -86,17 +85,17 @@ body {
 }
 
 .scanButton {
-  transform: translateX(535%);
+ 
   margin-top: 20px;
   padding: 10px 20px;
   font-size: 16px;
   cursor: pointer;
-  background-color: #6a1b9a;
+  background-color: #ff00ee;
   color: #fff;
   border: none;
   border-radius: 5px;
   transition: background-color 0.3s ease;
-  margin-left: 1000px;
+  margin-left: 150px;
 }
 
 .scanButton:hover {
@@ -106,7 +105,9 @@ body {
 h3, p {
   margin: 0;
 }
-
+h3{
+  cursor: pointer;
+}
 .table {
   width: 100%;
   border-collapse: collapse;
@@ -199,24 +200,28 @@ h3, p {
   padding: 2%;
   margin-left: -2%;
   width:1450px;
-  height: 550px;
+  height: 650px;
   border-radius: 10px;
   background-color: #5a3c6c;
   display: flex;
   gap: 12rem;
   align-items: center;
+  
+  
 }
-.facehero img{
+.facereco{
+  height:650px;
+  gap:18rem;
+}
+.faceHero img{
   width:600px;
   height:600px;
   border-radius: 50%;
   object-fit: cover;
+  filter:drop-shadow(0 6px 10px #db71fecc)
 
 }
-.facehero{
-  filter: drop-shadow(0 8px 12px #db71fecc);
-  border-radius: 50%;
-}
+
 
 .responseContainer {
   margin-top: 20px;

@@ -38,9 +38,9 @@ const FaceDetection = () => {
             alert("Please upload an image first.");
             return;
         }
-        console.log("handle Submit is clicked");
+
         const payload = { faceImage };
-        
+
         try {
             const res = await fetch('http://127.0.0.1:5000/face-detection', {
                 method: 'POST',
@@ -55,25 +55,28 @@ const FaceDetection = () => {
             }
 
             const data = await res.json();
-            const { result } = data.data; // Extract the result field from the response data
-            setResult(result);
-            console.log(result);
+            if (data && data.data && data.data.result) {
+                setResult(data.data.result);
+            } else {
+                throw new Error('Unexpected response data structure');
+            }
         } catch (error) {
             console.error('There was a problem with the fetch operation:', error);
         }
     };
 
     return (
-        <div>
-            <div className={style.mainIdSection}>
+        <div className={style.recoSection}>
+            <div className={style.facereco}>
+                <div className={style.faceHero}>
+                    <img src="face.gif" alt="face" />
+                </div>
                 <div className={style.app}>
-                    <div className={style.mainUpload}>
-                        <div className={style.container}>
-                            <ImageUpload title="Upload Image" onImageUpload={setFaceImage} />
-                            {faceImage && <img src={faceImage} alt="Uploaded" className={style.uploadedImage} />}
-                        </div>
+                    <div className={style.container}>
+                        <ImageUpload title="Upload Image" onImageUpload={setFaceImage} />
+                        {faceImage && <img src={faceImage} alt="Front" className={style.uploadedImage} />}
                     </div>
-                    <button className={style.scanButton} onClick={handleScan}>Scan</button>
+                    <button onClick={handleScan} className={style.scanButton}>Scan</button>
                 </div>
             </div>
             {result && (

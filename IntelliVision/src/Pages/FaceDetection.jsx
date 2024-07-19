@@ -41,9 +41,10 @@ const FaceDetection = () => {
     };
 
     return (
-        <div className={style.faceDetection}>
+        <div className={style.faceSection}>
+        <div className={style.FaceDetection}>
             <div className={style.faceHero}>
-                <img src="hero.png" alt="hero" height="550px" width="800px" />
+                <img src="sideAi.jpg" alt="hero" height="550px" width="800px" />
             </div>
             <div className={style.app}>
                 <div className={style.container}>
@@ -52,6 +53,7 @@ const FaceDetection = () => {
                 </div>
                 <button onClick={handleScan} className={style.scanButton}>Scan</button>
             </div>
+        </div>
         </div>
     );
 };
