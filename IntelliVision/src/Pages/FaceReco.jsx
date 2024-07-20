@@ -1,6 +1,6 @@
 import React, { useState, useCallback } from 'react';
 import { useDropzone } from 'react-dropzone';
-import style from './IdDetection.module.css';
+import style from './Facereco.module.css';
 
 const ImageUpload = ({ title, onImageUpload }) => {
     const onDrop = useCallback((acceptedFiles) => {
@@ -29,20 +29,20 @@ const ImageUpload = ({ title, onImageUpload }) => {
     );
 };
 
-const FaceDetection = () => {
-    const [faceImage, setFaceImage] = useState(null);
+const IdDetection = () => {
+    const [frontImage, setFrontImage] = useState(null);
+    const [backImage, setBackImage] = useState(null);
     const [result, setResult] = useState(null);
 
-    const handleScan = async () => {
-        if (!faceImage) {
-            alert("Please upload an image first.");
-            return;
-        }
-
-        const payload = { faceImage };
+    const handleSubmit = async () => {
+        console.log("handleSubmit is clicked");
+        const payload = {
+            frontImage,
+            backImage
+        };
 
         try {
-            const res = await fetch('http://127.0.0.1:5000/face-detection', {
+            const res = await fetch('http://127.0.0.1:5000/face-reco', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -55,38 +55,62 @@ const FaceDetection = () => {
             }
 
             const data = await res.json();
-            if (data && data.data && data.data.result) {
-                setResult(data.data.result);
-            } else {
-                throw new Error('Unexpected response data structure');
-            }
+            setResult(data);
+            console.log('Response Data:', data); // Debugging log
         } catch (error) {
-            console.error('There was a problem with the fetch operation:', error);
+            console.error('Error:', error);
         }
     };
 
+    const renderTableData = () => {
+        if (!result || !result.data) return null;
+
+        return Object.keys(result.data).map((key) => (
+            <tr key={key}>
+                <td>{key}</td>
+                <td>{JSON.stringify(result.data[key])}</td>
+            </tr>
+        ));
+    };
+
     return (
-        <div className={style.recoSection}>
-            <div className={style.facereco}>
-                <div className={style.faceHero}>
-                    <img src="face.gif" alt="face" />
-                </div>
+        <div>
+            <div className={style.Detectiontitle}>
+                <h2>Face Recognition</h2>
+            </div>
+            <div className={style.mainIdSection}>
                 <div className={style.app}>
-                    <div className={style.container}>
-                        <ImageUpload title="Upload Image" onImageUpload={setFaceImage} />
-                        {faceImage && <img src={faceImage} alt="Front" className={style.uploadedImage} />}
+                    <div className={style.mainUpload}>
+                        <div className={style.container}>
+                            {frontImage && <img src={frontImage} alt="Front" className={style.uploadedImage} />}
+                            <ImageUpload title="First Image" onImageUpload={setFrontImage} />
+                        </div>
+                        <div className={style.container}>
+                            {backImage && <img src={backImage} alt="Back" className={style.uploadedImage} />}
+                            <ImageUpload title="Second Image" onImageUpload={setBackImage} />
+                        </div>
                     </div>
-                    <button onClick={handleScan} className={style.scanButton}>Scan</button>
+                    <button className={style.scanButton} onClick={handleSubmit}>Scan</button>
                 </div>
             </div>
             {result && (
-                <div className={style.responseContainer}>
+                <div className={style.resultSection}>
                     <h3>Scan Result:</h3>
-                    <p>{result}</p>
+                    <table className={style.resultTable}>
+                        <thead>
+                            <tr>
+                                <th>Key</th>
+                                <th>Value</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {renderTableData()}
+                        </tbody>
+                    </table>
                 </div>
             )}
         </div>
     );
 };
 
-export default FaceDetection;
+export default IdDetection;

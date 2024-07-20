@@ -1,0 +1,134 @@
+.IdDetectionsection {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.Detectiontitle {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.mainIdSection {
+  width: 100%;
+  max-width: 600px;
+}
+
+.app {
+  width: 100%;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  background-color: #fff;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.mainUpload {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.container {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.uploadedImage {
+  max-width: 100%;
+  margin-top: 10px;
+}
+
+.scanButton {
+  padding: 10px 20px;
+  background-color: #6200ea;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+
+}
+
+.scanButton:hover {
+  background-color: #4500b5;
+}
+
+.anotherSection {
+  width: 100%;
+  max-width: 1000px;
+  margin-top: 20px;
+}
+
+.imageUploadContainer {
+  border: 2px dashed #ccc;
+  padding: 20px;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: border-color 0.2s ease;
+}
+
+.imageUploadContainer.active {
+  border-color: #6200ea;
+}
+
+.imageUploadContainer.empty {
+  border-color: #f00;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 18px;
+  text-align: left;
+  word-break: break-word;
+  white-space: normal;
+  overflow-wrap: break-word;
+}
+
+.table thead tr {
+  background-color: #6a0dad;
+  color: #ffffff;
+  text-align: left;
+  font-weight: bold;
+}
+
+.table th,
+.table td {
+  padding: 12px 15px;
+  border: 1px solid #dddddd;
+}
+
+.table tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+.table tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+.table tbody tr:last-of-type {
+  border-bottom: 2px solid #6a0dad;
+}
+
+.table tbody tr:hover {
+  background-color: #d1c4e9;
+}
+
+.responseWrapper {
+  padding: 20px;
+  border: 1px solid #dddddd;
+  border-radius: 10px;
+  background-color: #ffffff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 1000px;
+}

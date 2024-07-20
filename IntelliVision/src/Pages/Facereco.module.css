@@ -1,0 +1,164 @@
+/* Facereco.module.css */
+
+/* Container for the entire section */
+.mainIdSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 50px auto; /* Center horizontally and add margin */
+  padding: 20px;
+  box-sizing: border-box;
+}
+.Detectiontitle{
+  margin-top: 4%;
+  text-align: center;
+}
+/* Container for image upload sections */
+.mainUpload {
+  display: flex;
+  justify-content: space-between; /* Containers side-by-side */
+  width: 100%;
+  max-width: 1000px; /* Adjust as needed */
+  margin-bottom: 20px; /* Space between containers and button */
+}
+
+/* Individual container for image upload */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 48%; /* Adjust width to fit side-by-side */
+  border: 1px solid #ddd;
+  padding: 10px;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden; /* Prevents the container from growing larger than its defined size */
+  flex: 1; /* Allow containers to grow equally within the flex container */
+}
+
+/* Ensures that both containers have the same height */
+.mainUpload {
+  display: flex;
+}
+
+.container:first-child,
+.container:last-child {
+  height: 300px; /* Set a fixed height or adjust as needed */
+}
+
+/* Styling for image upload dropzone */
+.imageUploadContainer {
+  text-align: center;
+  border: 2px dashed #6a1b9a;
+  padding: 20px;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.3s ease;
+  cursor: pointer;
+}
+
+/* Active state for the dropzone */
+.imageUploadContainer.active {
+  border-color: #2196f3;
+}
+
+/* Header inside the dropzone */
+.imageUploadContainer h3 {
+  color: #6a1b9a;
+  cursor: pointer;
+}
+
+/* Paragraph inside the dropzone */
+.imageUploadContainer p {
+  color: #888;
+}
+
+/* Style for uploaded images */
+.uploadedImage {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain; /* Ensure image is fully visible */
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+/* Style for the scan button */
+.scanButton {
+  margin-top: 20px; /* Space between button and containers */
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #ff00ee;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  margin-left: 380px;
+}
+
+/* Hover effect for the scan button */
+.scanButton:hover {
+  background-color: #4a148c;
+}
+
+/* Styling for the result section */
+.resultSection {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  width: 100%;
+  max-width: 1000px; /* Center result section */
+  text-align: center;
+  box-sizing: border-box;
+  margin-left: 440px;
+}
+
+/* Styling for result table */
+.resultTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* Table header and cells styling */
+.resultTable th, .resultTable td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+/* Table header styling */
+.resultTable th {
+  background-color: #6a0dad;
+  color: white;
+}
+
+/* Alternating row colors for the table */
+.resultTable tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+/* Hover effect for table rows */
+.resultTable tbody tr:hover {
+  background-color: #d1c4e9;
+}
+
+/* Media query for responsive design */
+@media (max-width: 768px) {
+  .mainUpload {
+    flex-direction: column;
+  }
+  .container {
+    width: 100%;
+    height: auto; /* Adjust height for smaller screens */
+    margin-bottom: 10px;
+  }
+}

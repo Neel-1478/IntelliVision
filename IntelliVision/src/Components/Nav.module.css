@@ -33,10 +33,14 @@
   display: flex;
   margin: 0;
   padding: 0;
+  text-decoration: none;
 }
+
 
 .navItem {
   margin: 0 15px;
+  color: #800080;
+  text-decoration: none;
 }
 
 .navItem a {

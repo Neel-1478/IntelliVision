@@ -1,6 +1,6 @@
 import React, { useState, useCallback } from 'react';
 import { useDropzone } from 'react-dropzone';
-import style from './IdDetection.module.css';
+import style from './IdDetections.module.css';
 import ResponseTable from '../Components/ResponseTable';
 
 const ImageUpload = ({ title, onImageUpload }) => {
@@ -18,13 +18,13 @@ const ImageUpload = ({ title, onImageUpload }) => {
     const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop, accept: 'image/*' });
 
     return (
-        <div {...getRootProps()} className={`${style.imageUploadContainer} ${isDragActive ? style.active : ''}`}>
+        <div {...getRootProps()} className={`${style.imageUploadContainer} ${isDragActive ? style.active : ''} ${!title ? style.empty : ''}`}>
             <input {...getInputProps()} />
-            <h3>{title}</h3>
+            {title && <h3>{title}</h3>}
             {isDragActive ? (
                 <p>Drop the files here ...</p>
             ) : (
-                <p>Drag n drop an image here, or click to select one</p>
+                <p>Drag & drop an image here, or click to select one</p>
             )}
         </div>
     );
@@ -32,14 +32,12 @@ const ImageUpload = ({ title, onImageUpload }) => {
 
 const IdDetection = () => {
     const [frontImage, setFrontImage] = useState(null);
-    // const [backImage, setBackImage] = useState(null);
     const [response, setResponse] = useState(null);
 
     const handleSubmit = async () => {
-        console.log("handle Submit is clicked")
+        console.log("handle Submit is clicked");
         const payload = {
             frontImage
-            // backImage,
         };
 
         const res = await fetch('http://127.0.0.1:5000/process-images', {
@@ -57,35 +55,42 @@ const IdDetection = () => {
 
     const tableData = React.useMemo(
         () => {
-            if (!response || !response.data || !response.data.mrz) return [];
-            return Object.entries(response.data.mrz).map(([key, value]) => ({ key, value }));
+            if (!response || !response.data) return [];
+            if (response.data.mrz) {
+                return Object.entries(response.data.mrz).map(([key, value]) => ({ key, value }));
+            } else if (response.data.ocr) {
+                return Object.entries(response.data.ocr).map(([key, value]) => ({ key, value }));
+            }
+            return [];
         },
         [response]
     );
 
     return (
-        <div>
+        <>
+        <div className={style.Detectiontitle}>
+            <h2>Id-Detection</h2>
+        </div>
+        <div className={style.IdDetectionsection}>
             <div className={style.mainIdSection}>
+
                 <div className={style.app}>
                     <div className={style.mainUpload}>
                         <div className={style.container}>
-                            <ImageUpload title="Front Side" onImageUpload={setFrontImage} />
                             {frontImage && <img src={frontImage} alt="Front" className={style.uploadedImage} />}
+                            <ImageUpload title={frontImage ? null : "Front Side"} onImageUpload={setFrontImage} />
                         </div>
-                        {/* <div className={style.container}>
-                            <ImageUpload title="Back Side" onImageUpload={setBackImage} />
-                            {backImage && <img src={backImage} alt="Back" className={style.uploadedImage} />}
-                        </div> */}
                     </div>
                     <button className={style.scanButton} onClick={handleSubmit}>Scan</button>
                 </div>
             </div>
-            {response && response.data && response.data.mrz && (
+            {response && response.data && (response.data.mrz || response.data.ocr) && (
                 <div className={style.anotherSection}>
                     <ResponseTable data={tableData} />
                 </div>
             )}
         </div>
+        </>
     );
 };
 

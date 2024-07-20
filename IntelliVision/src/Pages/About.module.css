@@ -1,0 +1,168 @@
+/* About.module.css */
+
+.aboutPage {
+    font-family: 'Poppins', sans-serif;
+    color: #4A148C; /* Main text color */
+    padding: 20px;
+    margin-top: 10vh;
+  }
+  
+  .headerContainer {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .headerHeading {
+    font-family: 'Bona Nova SC', serif;
+    font-size: 2.5rem;
+    margin: 0;
+    color: #6A0DAD; /* Darker purple for prominence */
+  }
+  
+  .headerSubheading {
+    font-size: 1.2rem;
+    color: #7A7A7A; /* Slightly muted text color */
+    margin: 10px 0;
+  }
+  
+  .introSection {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+  }
+  
+  .intro {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    max-width: 1200px;
+  }
+  
+  .introImage {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .introText {
+    max-width: 600px;
+  }
+  
+  .introText h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #4A148C; /* Main section heading color */
+  }
+  
+  .introText p {
+    text-align: justify;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #5E35B1; /* Lighter shade of purple for body text */
+    margin-bottom: 20px;
+  }
+  
+  .missionSection {
+    margin-top: 40px;
+    text-align: center;
+  }
+  
+  .missionSection h2 {
+    font-size: 2rem;
+    color: #6A0DAD; /* Darker purple for heading */
+    margin-bottom: 10px;
+  }
+  
+  .missionSection p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #5E35B1; /* Lighter shade of purple */
+    max-width: 800px;
+    margin: auto;
+  }
+  
+  .servicesSection {
+    margin-top: 50px;
+  }
+  
+  .servicesSection h2 {
+    font-size: 2rem;
+    color: #6A0DAD; /* Darker purple for heading */
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .servicesGrid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .serviceCard {
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .serviceCard h3 {
+    font-size: 1.5rem;
+    color: #6A0DAD; /* Darker purple for service headings */
+    margin-bottom: 10px;
+  }
+  
+  .serviceCard p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #5E35B1; /* Lighter shade of purple for body text */
+  }
+  
+  
+.contributors {
+  background-color: #ffffff; /* white background */
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 100px;
+}
+
+.contributors h2 {
+  color: #4A148C; /* Purple text */
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.contributorsGrid {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* gap between cards */
+}
+
+.card {
+  border: 2px solid #4A148C;
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: scale(1.1); /* 3D effect on hover */
+}
+
+.card h4 {
+  margin-top: 20px;
+  text-align: center;
+  font-family: 'Poppins';
+  color: #4A148C;
+  font-weight: 500;
+}
+
+.cardImage {
+  height: 195px;
+  width: 195px;
+  border-radius: 50%;
+}

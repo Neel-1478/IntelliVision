@@ -5,11 +5,9 @@ import Nav from './Components/Nav';
 import Home from './Pages/Home';
 import FaceDetection from './Pages/FaceDetection';
 import FaceRecognition from './Pages/FaceReco';
-import FaceEmotion from './Pages/FaceEmotion';
 import IDDetection from './Pages/IdDetection';
-// import Collections from './Collections';
-// import About from './About';
-// import Contact from './Contact';
+import About from './Pages/About';
+import Contact from './Pages/Contact';
 
 function App() {
   return (
@@ -18,13 +16,13 @@ function App() {
         <Nav />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/home" element={<Home />} />
           <Route path="/face-detection" element={<FaceDetection />} />
           <Route path="/face-recognition" element={<FaceRecognition />} />
-          <Route path="/face-emotion" element={<FaceEmotion />} />
+        
           <Route path="/id-detection" element={<IDDetection />} />
-          {/* <Route path="/collections" element={<Collections />} />
           <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} /> */}
+          <Route path="/contact" element={<Contact />} />
         </Routes>
       </div>
     </Router>

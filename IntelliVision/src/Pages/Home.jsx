@@ -1,5 +1,5 @@
 import styles from './Home.module.css';
-import { FaReact, FaHtml5, FaCss3Alt, FaNodeJs, FaPython, FaBootstrap } from 'react-icons/fa';
+import { FaReact, FaHtml5, FaCss3Alt, FaNodeJs, FaPython, FaBootstrap, FaInstagram, FaFacebook, FaWhatsapp } from 'react-icons/fa';
 import { SiTensorflow, SiKeras, SiOpencv, SiFlask } from 'react-icons/si';
 
 function Home() {
@@ -10,7 +10,7 @@ function Home() {
         <p className={styles.headerSubheading}>
           Revolutionizing Document Management and Face Recognition with Cutting-Edge Technology
         </p>
-        <button className={styles.headerButton}>Let&apos;s get started</button>
+        <button className={styles.headerButton}><a href="https://github.com/Neel-1478/IntelliVision">Go to Github</a></button>
       </div>
 
       <div className={styles.introSection}>
@@ -61,48 +61,33 @@ function Home() {
         </div>
       </div>
 
-      <div className={styles.contributors}>
-        <h2>Our Contributors</h2>
-        <div className={styles.contributorsGrid}>
-          <div className={styles.card}>
-            <img src="con1.jpeg" alt="Contributor 1"  className={styles.cardImage} />
-            <h4>NEEL PATEL</h4>
-          </div>
-          <div className={styles.card}>
-            <img src="con4.jpg" alt="Contributor 2" width={'100px'} className={styles.cardImage} />
-            <h4>POOJAN PATEL</h4>
-          </div>
-          <div className={styles.card}>
-            <img src="con2.jpg" alt="Contributor 3" className={styles.cardImage} />
-            <h4>PARTH SOJITRA</h4>
-          </div>
-          <div className={styles.card}>
-            <img src="con3.jpg" alt="Contributor 4" className={styles.cardImage} />
-            <h4>JAY THORIYA</h4>
-          </div>
-        </div>
-      </div>
+      
 
       <div className={styles.subscriptionSection}>
         <div className={styles.logo}>
-            
-       
-        <img src="vite.svg" alt="ManageHub Logo" />
-        <h1>  IntelliVision</h1>
-        </div>
-        <p>Subscribe to our newsletter</p>
-        <div className={styles.subscriptionForm}>
-            <input type="email" placeholder="Input your email" />
-            <button>Subscribe</button>
-        </div>
-        <div>
-          <li><a href=""><i className="bi bi-instagram"/></a></li>
-          <li><a href=""><i className="bi bi-whatsapp"/></a></li>
-          <li><a href=""><i className="bi bi-facebook"/></a></li>
-        </div>
-    </div>
 
-    
+
+          <img src="vite.svg" alt="ManageHub Logo" />
+          <h1>  IntelliVision</h1>
+        </div>
+        <div className='logoP'>
+        <p>Subscribe to our newsletter</p>
+
+        </div>
+        <div className={styles.subscriptionForm}>
+          <input type="email" placeholder="Input your email" />
+          <button>Subscribe</button>
+        </div>
+
+      </div>
+      < div className={styles.socialIcons}>
+        <li><a href=""><FaInstagram className={styles.insta} /></a></li>
+        <li><a href=""><FaFacebook /></a></li>
+        <li><a href=""><FaWhatsapp className={styles.whatsapp} /></a></li>
+      </div>
+      <div className={styles.copyright}>
+      <p> Intellivision &copy; 2024 All right reserved</p>
+      </div>
     </div>
   );
 }

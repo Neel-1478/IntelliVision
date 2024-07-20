@@ -1,7 +1,6 @@
-// ResponseTable.js
 import React from 'react';
 import { useTable } from 'react-table';
-import style from '../Pages/IdDetection.module.css';
+import style from '../Pages/IdDetections.module.css';
 
 const ResponseTable = ({ data }) => {
     const columns = React.useMemo(
