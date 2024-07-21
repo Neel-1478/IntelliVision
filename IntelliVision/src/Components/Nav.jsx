@@ -30,9 +30,6 @@ const Nav = () => {
         <li><Link className={styles.navItem} to="/contact">Contact</Link></li>
         {/* <li className={styles.navItem}><a href="#contact">Contact</a></li> */}
       </ul>
-      <div className={styles.navIcons}>
-        <a href="#profile" className={styles.icon}><i className="fas fa-user"></i></a>
-      </div>
     </nav>
   );
 }

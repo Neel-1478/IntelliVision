@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Bona+Nova+SC:ital,wght@0,400;0,700;1,400&display=swap');
 
+/* Common Styles */
 .headerContainer {
     font-family: 'Poppins', sans-serif;
     display: flex;
@@ -10,20 +11,20 @@
     margin-top: 10vh;
     padding: 50px 20px;
     animation: slideBottom 1s ease forwards;
-  }
-  
-  .headerHeading {
+}
+
+.headerHeading {
     font-family: 'Bona Nova SC';
     font-size: 2.5rem;
     margin: 0;
-  }
-  
-  .headerSubheading {
+}
+
+.headerSubheading {
     font-size: 20px;
     margin: 10px 0;
-  }
-  
-  .headerButton {
+}
+
+.headerButton {
     background-color: #6A1B9A; /* Darker purple for button */
     color: #ffffff; /* White text */
     border: none;
@@ -35,160 +36,214 @@
     transition: background-color 0.3s ease;
     width: 200px;
     margin: 0 auto;
-  }
-  .headerButton a{
+}
+
+.headerButton a {
     text-decoration: none;
     color: aliceblue;
+}
 
-  }
-  .headerButton:hover {
+.headerButton:hover {
     background-color: #4A148C; /* Darker purple for hover effect */
-  }
-  
-  .introSection {
+}
+
+.introSection {
     display: flex;
     justify-content: center;
     padding: 50px 20px;
-  }
-  
-  .intro {
+}
+
+.intro {
     display: flex;
     align-items: center;
     gap: 25rem;
     max-width: 2000px;
     animation: slideRight 1.5s ease forwards; /* Adjust the max-width as needed */
-  }
-  
-  .introImage {
+}
+
+.introImage {
     max-width: 100%;
     height: auto;
     margin-right: 20px; /* Space between the image and the text */
-  }
-  
-  .aboutSection {
+}
+
+.aboutSection {
     margin-top: 50px;
     max-width: 600px; 
-      animation: slideLeft 1.5s ease Forwards;/* Adjust the max-width as needed */
-  }
-  
-  .aboutSection h2 {
+    animation: slideLeft 1.5s ease forwards; /* Adjust the max-width as needed */
+}
+
+.aboutSection h2 {
     font-size: 2.5rem;
     color: #4A148C; /* Match the theme color */
     margin-bottom: 10px;
-  }
-  
-  .aboutSection ul {
+}
+
+.aboutSection ul {
     list-style-type: disc;
     padding-left: 20px;
-  }
-  
-  .aboutSection li {
+}
+
+.aboutSection li {
     font-size: 1.5rem;
     margin-bottom: 10px;
-  }
- 
+}
+
 .techStackSection h2 {
     margin-top: 100px;
     font-size: 2rem;
     color: #4A148C; /* Match the theme color */
     margin-bottom: 20px;
     text-align: center;
-  }
-  
-  .techCards {
+}
+
+.techCards {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     gap: 60px;
-  }
-  
-  .techCard {
-    background: linear-gradient(45deg, #ffffff, #9a57ec);
+}
+
+.techCard {
+    background: linear-gradient(45deg, #D1C4E9, #9575CD);
     border: 1px solid #ddd;
     border-radius: 10px;
     padding: 20px;
     width: 300px;
     margin: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-     /* Initially hidden */
     transform: translateY(20px); /* Position it off-screen initially */
-  }
-  
-  .techCard.visible {
-    animation: slideTop 1.5s ease forwards;
-  }
-  
-  
-  .techCard h3 {
+    opacity: 0; /* Initially hidden */
+    transition: opacity 1.5s ease, transform 1.5s ease; /* Smooth transition */
+}
+
+.techCard.visible {
+    animation: slideIn 1.5s ease forwards; /* Apply the keyframe animation */
+}
+
+.techCard h3 {
     font-size: 1.5rem;
     color: #4A148C; /* Match the theme color */
     margin-bottom: 10px;
-  }
-  
-  .techCard ul {
+}
+
+.techCard ul {
     list-style-type: disc;
     padding-left: 20px;
-  }
-  
-  .techCard li {
+}
+
+.techCard li {
     font-size: 1.5rem;
     margin-bottom: 10px;
     display: flex;
     align-items: center;
-  }
-  
-  .techCard li svg {
+}
+
+.techCard li svg {
     margin-right: 8px;
+}
+
+/* FeatureHighlights.module.css */
+
+.featureHighlights {
+    padding: 50px 20px;
+    background-color: #EDE7F6; /* Light lavender */
+    text-align: center;
   }
-
-  /* styles.module.css */
-
   
-  .subscriptionSection {
+  .featureHighlights h2 {
+    font-size: 2.5rem;
+    color: #4A148C; /* Matching the theme color */
+    margin-bottom: 30px;
+  }
+  
+  .featureList {
+    display: flex;
+    justify-content: center;
+    /* flex-direction: column; */
+    gap: 20px;
+    align-items: center;
+  }
+  
+  .featureItem {
+    background-color: #ffffff; /* White background for the feature items */
+    border: 1px solid #ddd; /* Light border */
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for elevation */
+    width: 80%;
+    max-width: 400px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .featureItem h3 {
+    font-size: 1.8rem;
+    color: #4A148C; /* Matching the theme color */
+    margin-bottom: 10px;
+  }
+  
+  .featureItem p {
+    text-align: justify;
+    font-size: 1.2rem;
+    color: #666; /* Subtle text color */
+    margin: 0;
+  }
+  
+  .featureItem:hover {
+    transform: translateY(-10px); /* Slight lift on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
+  }
+  
+
+.subscriptionSection {
     text-align: center;
     padding: 10px;
     border-radius: 8px;
     max-width: 700px;
     margin: auto;
     margin-top: 100px; /* Adjust as needed */
-  }
+}
 
 .logo img {
     width: 80px;
     height: 80px;
-  
-
 }
+
 .logo {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 10px;
     margin: 10px 0;
-    
 }
+
 .logo h1 {
     color: #4A148C;
 }
+
 .logoP p {
     color: #4A148C;
 }
+
 .subscriptionSection h2 {
     font-size: 24px;
     color: #4A4A4A;
     margin: 20px 0 10px;
 }
+
 .subscriptionSection p {
     font-size: 20px;
     color: #7A7A7A;
     margin: 10px 0 20px;
 }
+
 .subscriptionForm {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 10px;
 }
+
 .subscriptionForm input[type="email"] {
     padding: 10px;
     font-size: 18px;
@@ -197,9 +252,11 @@
     width: 350px;
     outline: none;
 }
+
 .subscriptionForm input[type="email"]:focus {
     border-color: #6A1B9A;
 }
+
 .subscriptionForm button {
     padding: 10px 20px;
     font-size: 20px;
@@ -209,9 +266,11 @@
     border-radius: 4px;
     cursor: pointer;
 }
+
 .subscriptionForm button:hover {
     background-color: #4A148C;
 }
+
 .socialIcons {
     display: flex;
     justify-content: center;
@@ -219,22 +278,26 @@
     gap: 35px;
     margin: 20px 0;
 }
+
 .socialIcons li {
     list-style: none;
     font-size: 50px;
 }
+
 .insta {
     border-radius: 14px;
     color: white;
     padding: 5px;
     background: linear-gradient(180deg, #4c568ac4, #5851DB, #833AB4, #c13584, #E1306c, #FD1D1D);
 }
+
 .whatsapp {
     background-color: #4CAF50; /* Adjusted green color */
     padding: 5px;
     border-radius: 25px;
     color: white;
 }
+
 .copyright {
     text-align: center;
     color: #4A148C;
@@ -242,43 +305,59 @@
     font-size: 22px;
     margin-bottom: 10px;
 }
-@keyframes slideRight{
-  0%{
-      transform:translatex(-100px);
-      opacity:0;
-  }
-  100%{
-      transform:translatex(0px);
-      opacity:1;
-  }
+
+/* Keyframes */
+@keyframes slideIn {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
-@keyframes slideLeft{
-  0%{
-      transform:translatex(100px);
-      opacity:0;
-  }
-  100%{
-      transform:translatex(0px);
-      opacity:1;
-  }
+
+@keyframes slideRight {
+    0% {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
 }
-@keyframes slideTop{
-  0%{
-      transform:translateY(100px);
-      opacity:0;
-  }
-  100%{
-      transform:translateY(0px);
-      opacity:1;
-  }
+
+@keyframes slideLeft {
+    0% {
+        transform: translateX(100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
 }
-@keyframes slideBottom{
-  0%{
-      transform:translateY(-100px);
-      opacity:0;
-  }
-  100%{
-      transform:translateY(0px);
-      opacity:1;
-  }
+
+@keyframes slideTop {
+    0% {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideBottom {
+    0% {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }

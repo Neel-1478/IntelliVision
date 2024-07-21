@@ -11,7 +11,7 @@ const About = () => {
       
       <section className={styles.introSection}>
         <div className={styles.intro}>
-          <img src="sideAi.jpg" alt="About Us" className={styles.introImage} />
+          <img src="removebg.png" alt="About Us" className={styles.introImage} />
           <div className={styles.introText}>
             <h2>Our Story</h2>
             <p>Founded in 2024, Intellivision began as a small startup with a vision to revolutionize the way we interact with technology. Our founders, driven by a passion for innovation, embarked on a journey to create cutting-edge solutions that would make a significant impact on various industries.</p>
