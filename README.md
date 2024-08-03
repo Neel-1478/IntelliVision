@@ -37,7 +37,7 @@
   - Start the Flask server:
     ```bash
     cd server
-    flask run
+    python app.py
     ```
   - Start the React client:
     ```bash
@@ -53,6 +53,7 @@
 ## Technologies Used
 
 - React.js (Vite setup)
+- CSS3
 - Flask
 - Node.js
 
